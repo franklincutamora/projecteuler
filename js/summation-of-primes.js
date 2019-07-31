@@ -1,5 +1,5 @@
 (function() {
-    function getPrimeNumbers(num) {
+    function getPrimeNumbersOf(num) {
         let primeNumbers = [];
         let sumOfAllPrimes = 0;
 
@@ -20,8 +20,13 @@
             }
         }
 
-        for (let idx = 0; idx <= (primeNumbers.length - 1); idx++){
-            sumOfAllPrimes = sumOfAllPrimes + primeNumbers[idx];
+        return primeNumbers;
+    }
+
+    function getSumOfAllPrimes(primes) {
+        let sumOfAllPrimes = 0;
+        for (let idx = 0; idx <= (primes.length - 1); idx++){
+            sumOfAllPrimes = sumOfAllPrimes + primes[idx];
         }
 
         return sumOfAllPrimes;
@@ -30,7 +35,8 @@
     function main() {
         const result = document.getElementById('result');
 
-        const answer = getPrimeNumbers(2000000);
+        const primes = getPrimeNumbersOf(10);
+        const answer = getSumOfAllPrimes(primes);
         result.innerText = answer;
     }
 
